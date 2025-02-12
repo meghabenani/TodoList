@@ -13,8 +13,12 @@ let Todos=()=>{
     }
 
     useEffect(()=>{
-        let x=JSON.parse(localStorage.getItem("todos"))
-        setTodo(x)
+        let x=localStorage.getItem("todos")
+        if(x){
+            let todos=JSON.parse(x)
+            setTodo(todos)
+        }
+
     },[])
 
     let addFunc=()=>{
